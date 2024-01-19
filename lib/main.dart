@@ -31,16 +31,5 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.amber,
-          ),
-        ));
-  }
+    
 }
