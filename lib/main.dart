@@ -29,37 +29,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var arrNames = ['Asma', 'flutter', 'React'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Hello Flutter"),
         ),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          children: const [
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'one',
-                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'two',
-                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'three',
-                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
-              ),
-            ),
-          ],
-        ));
+        body: ListView.builder(
+            itemBuilder: (context, index) {
+              return Text(
+                arrNames[index],
+                style:
+                    const TextStyle(fontSize: 21, fontWeight: FontWeight.w200),
+              );
+            },
+            itemCount: arrNames.length));
   }
 }
