@@ -35,49 +35,31 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text("Hello Flutter"),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                            height: 200,
-                            width: 100,
-                            color: Colors.orange,
-                            margin: const EdgeInsets.only(right: 11)),
-                        Container(
-                            height: 200,
-                            width: 150,
-                            color: Colors.grey,
-                            margin: const EdgeInsets.only(right: 11)),
-                        Container(
-                            height: 200,
-                            width: 200,
-                            color: Colors.pink,
-                            margin: const EdgeInsets.only(right: 11)),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                    height: 200,
-                    width: 200,
-                    color: Colors.blue,
-                    margin: const EdgeInsets.only(bottom: 11)),
-                Container(
-                    height: 200,
-                    width: 200,
-                    color: Colors.lightGreen,
-                    margin: const EdgeInsets.only(bottom: 11))
-              ],
+        body: ListView(
+          scrollDirection: Axis.horizontal,
+          children: const [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'one',
+                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+              ),
             ),
-          ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'two',
+                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'three',
+                style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+              ),
+            ),
+          ],
         ));
   }
 }
