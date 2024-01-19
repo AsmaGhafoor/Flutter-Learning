@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var arrNames = ['Asma', 'flutter', 'React'];
+  var arrNames = ['Asma', 'flutter', 'JavaScript', 'React', 'React Native'];
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +37,20 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text("Hello Flutter"),
         ),
-        body: ListView.builder(
-            itemBuilder: (context, index) {
-              return Text(
-                arrNames[index],
-                style:
-                    const TextStyle(fontSize: 21, fontWeight: FontWeight.w200),
-              );
-            },
-            itemCount: arrNames.length));
+        body: ListView.separated(
+          itemBuilder: (context, index) {
+            return Text(
+              arrNames[index],
+              style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w200),
+            );
+          },
+          itemCount: arrNames.length,
+          separatorBuilder: (context, index) {
+            return const Divider(
+              height: 60,
+              thickness: 4,
+            );
+          },
+        ));
   }
 }
