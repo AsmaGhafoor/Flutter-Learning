@@ -35,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text("Hello Flutter"),
         ),
-        //tested a new comment
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
