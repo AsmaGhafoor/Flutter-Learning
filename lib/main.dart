@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FlutterApp',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.cyan),
       home: DashboardScreen(),
     );
   }
@@ -25,25 +25,40 @@ class DashboardScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Dashboard"),
         ),
-        body: Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.black38,
-            child: Center(
-                child: Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                  color: Colors.blueGrey,
-                  border: Border.all(
-                    width: 2,
-                    color: Colors.black,
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                        blurRadius: 11, color: Colors.green, spreadRadius: 7)
-                  ],
-                  shape: BoxShape.circle),
-            ))));
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.black45,
+              ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.lightGreen,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.redAccent,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.orangeAccent,
+              ),
+            )
+          ],
+        ));
   }
 }
