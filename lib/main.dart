@@ -1,56 +1,49 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'FlutterApp',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: DashboardScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  var arrNames = ['Asma', 'flutter', 'JavaScript', 'React', 'React Native'];
-
+// ignore: use_key_in_widget_constructors
+class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Hello Flutter"),
+          title: const Text("Dashboard"),
         ),
-        body: ListView.separated(
-          itemBuilder: (context, index) {
-            return Text(
-              arrNames[index],
-              style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w200),
-            );
-          },
-          itemCount: arrNames.length,
-          separatorBuilder: (context, index) {
-            return const Divider(
-              height: 60,
-              thickness: 4,
-            );
-          },
-        ));
+        body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: Colors.black38,
+            child: Center(
+                child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                  border: Border.all(
+                    width: 2,
+                    color: Colors.black,
+                  ),
+                  boxShadow: const [
+                    BoxShadow(
+                        blurRadius: 11, color: Colors.green, spreadRadius: 7)
+                  ],
+                  shape: BoxShape.circle),
+            ))));
   }
 }
