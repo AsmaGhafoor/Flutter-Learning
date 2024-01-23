@@ -25,38 +25,14 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Dashboard"),
       ),
-      
-      body: 
-      // const Center(
-      //   child: SizedBox(
-      //     width: 100,
-      //     height: 100,
-      //     child: CircleAvatar(
-      //       backgroundImage: AssetImage('assets/images/image1.jpg'),
-      //       backgroundColor: Colors.green,
-      //     ),
-      //   ),
+      body:  
+      // const Text(
+      //     'Hello',style: TextStyle(fontFamily: 'FontMain', fontSize: 24),
       // )
-      Center(
-        child: CircleAvatar(
-          // ignore: sized_box_for_whitespace
-          backgroundColor: Colors.green,
-          maxRadius: 60,
-          // ignore: sized_box_for_whitespace
-          child: Container(
-            width:70,
-            height:70,
-            child:Column(
-              // ignore: sized_box_for_whitespace
-              children: [Container(
-                width:40,
-                height:40,
-                child:Image.asset('assets/images/image1.jpg')
-              ),Text('Name', style:TextStyle(color:Colors.red[200]))],
-            ),
-          ),
-        ),
+      const Text( 'Hello World',
+       style: TextStyle(fontFamily: 'FontMain', fontSize: 44),
       )
+
     );
   }
 }
