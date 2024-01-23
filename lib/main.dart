@@ -25,40 +25,13 @@ class DashboardScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Dashboard"),
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 2,
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.black45,
-              ),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.lightGreen,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.redAccent,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.orangeAccent,
-              ),
-            )
-          ],
+        body: const Padding(
+          // padding:EdgeInsets.all(11),
+          padding: EdgeInsets.only(top: 11, left: 34),
+          child: Text(
+            'Hello world',
+            style: TextStyle(fontSize: 25),
+          ),
         ));
   }
 }
