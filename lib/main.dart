@@ -22,16 +22,20 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Dashboard"),
-        ),
-        body: const Padding(
-          // padding:EdgeInsets.all(11),
-          padding: EdgeInsets.only(top: 11, left: 34),
-          child: Text(
-            'Hello world',
-            style: TextStyle(fontSize: 25),
-          ),
-        ));
+      appBar: AppBar(
+        title: const Text("Dashboard"),
+      ),
+      body: 
+      // const Padding(
+      //   // padding:EdgeInsets.all(11),
+      //   padding: EdgeInsets.only(top: 11, left: 34),
+      //   child: Text( 'Hello world', style: TextStyle(fontSize: 25)),
+      // ),
+
+      Container(
+        color:Colors.brown[200],
+        child:const Text('Hello world', style:TextStyle(fontSize: 25),)
+      )
+    );
   }
 }
