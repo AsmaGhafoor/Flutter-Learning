@@ -24,33 +24,95 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var arrNames = ['Asma', 'flutter', 'JavaScript', 'React', 'React Native'];
-
+  /* Input fields*/
+ 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement createState
+    //throw UnimplementedError();
+     var emailText=TextEditingController();
+  var passText=TextEditingController();
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Hello Flutter"),
-        ),
-        body: ListView.separated(
-          itemBuilder: (context, index) {
-            return Text(
-              arrNames[index],
-              style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w200),
-            );
-          },
-          itemCount: arrNames.length,
-          separatorBuilder: (context, index) {
-            return const Divider(
-              height: 60,
-              thickness: 4,
-            );
-          },
-        ));
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: const Text('Flutter'),
+      ),
+      
+      body: 
+      // const Center(
+      //   child: Card(
+      //     shadowColor: Colors.green,
+      //     elevation: 12,
+      //     child: Padding(
+      //       padding: EdgeInsets.all(8.0),
+      //       child: Text('hello world', style: TextStyle(fontSize: 25),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+
+      Center(child: SizedBox(
+        width:300,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+
+            TextField(
+              controller: emailText,
+
+              decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(11),
+                  borderSide: const BorderSide(
+                  color:Colors.blueAccent,
+                  width: 2,
+                  )
+                ),
+                
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(11),
+                  borderSide: const BorderSide(
+                  color:Colors.blueAccent,
+                  width: 2,
+                  )
+                ),
+                suffixText: 'User exist',
+                suffixIcon: IconButton(icon: const Icon(Icons.remove_red_eye, color:Colors.orange),onPressed: (){},),
+                prefixIcon: IconButton(icon: const Icon(Icons.email, color: Colors.orange), onPressed: () {  },)
+              ),
+            ),
+            
+            Container(height: 11,),
+
+            TextField(
+              controller: passText,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(11),
+                  borderSide: const BorderSide(
+                    color:Colors.deepOrange
+                  )
+                )
+              ),
+            ),
+
+
+            ElevatedButton(onPressed: (){
+              // ignore: unused_local_variable
+              String uEmail=emailText.text.toString();
+            }, child: const Text('Login'))
+
+          ],
+        )
+      )
+      )
+    );
   }
 }
