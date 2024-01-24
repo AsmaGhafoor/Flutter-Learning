@@ -34,10 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
  
   @override
   Widget build(BuildContext context) {
-    // TODO: implement createState
-    //throw UnimplementedError();
      var emailText=TextEditingController();
-  var passText=TextEditingController();
+     var passText=TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
