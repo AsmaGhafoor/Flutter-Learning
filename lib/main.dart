@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'FlutterApp',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.cyan),
+      home: DashboardScreen(),
     );
   }
 }
 
+<<<<<<< HEAD
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -32,6 +29,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   /* Input fields*/
  
+=======
+// ignore: use_key_in_widget_constructors
+class DashboardScreen extends StatelessWidget {
+>>>>>>> 16204cc33203b68351a297075436a1f7900a5f08
   @override
   Widget build(BuildContext context) {
      var emailText=TextEditingController();
@@ -39,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter'),
       ),
@@ -111,6 +113,18 @@ class _MyHomePageState extends State<MyHomePage> {
         )
       )
       )
+=======
+        title: const Text("Dashboard"),
+      ),
+      body:  
+      // const Text(
+      //     'Hello',style: TextStyle(fontFamily: 'FontMain', fontSize: 24),
+      // )
+      const Text( 'Hello World',
+       style: TextStyle(fontFamily: 'FontMain', fontSize: 44),
+      )
+
+>>>>>>> 16204cc33203b68351a297075436a1f7900a5f08
     );
   }
 }
