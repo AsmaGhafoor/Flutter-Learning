@@ -3,6 +3,7 @@ import 'dart:js_interop_unsafe';
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/rendering.dart';
+import 'package:flutterapp/widgets/rounded_btn.dart';
 // ignore: unused_import
 import 'package:intl/intl.dart';
 
@@ -33,28 +34,41 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: SizedBox(
-          width: 300,
-          height: 300,
-          child: Stack(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 200,
-                height: 200,
-                color: Colors.blueGrey,
-              ),
-          
-              Positioned(
-                left: 21,
-                top: 21,
-                // bottom:21,
-                // right: 21,
-                child: Container(
-                  width: 200,
-                  height: 200,
-                  color: Colors.grey,
+              SizedBox(
+                width: 150,
+                height: 70,
+                child: RoundedButton(
+                  btnName: 'Play',
+                  icon: const Icon(Icons.play_arrow),
+                  callBack: (){
+                    // ignore: avoid_print
+                    print('Logged in');
+                  },
+                  textStyle: const TextStyle(),
                 ),
               ),
+              const SizedBox(height: 11,),
+
+              SizedBox(
+                width: 150,
+                height: 70,
+                child: RoundedButton(
+                  btnName: 'Press',
+                  icon: const Icon(Icons.play_arrow),
+                  callBack: (){
+                    // ignore: avoid_print
+                    print('Logged in');
+                  },
+                  bgColor: Colors.orange,
+                  textStyle: const TextStyle(),
+                  iconColor: Colors.white,
+                ),
+              ),
+
             ],
           ),
         )
