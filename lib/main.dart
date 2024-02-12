@@ -22,17 +22,12 @@ class MyApp extends StatelessWidget {
 
 // ignore: must_be_immutable
 class DashboardScreen extends StatelessWidget {
-  var arrColors=[
-    Colors.amber,
-    Colors.grey,
-    Colors.blue,
-    Colors.pink,
-    Colors.green,
-    Colors.purpleAccent,
-    Colors.brown,
-  ];
+  callBack(){
+    // ignore: avoid_print
+    print('Clicked');
+  }
 
-  DashboardScreen({super.key});
+  const DashboardScreen({super.key});
     @override
     Widget build(BuildContext context) {
       // ignore: unused_local_variable
@@ -44,38 +39,13 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: GridView.count(
-          crossAxisCount: 3,
-          children:[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[0],),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[1],),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[2],),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[3],),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[4],),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[5],),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(color: arrColors[6],),
-            ),
-          ]
+        body: ElevatedButton(
+        child: const Text('Click me'),
+        // onPressed: () { 
+        //   // ignore: avoid_print
+        //   print('Clicked');
+        //  },
+        onPressed: callBack,
         )
       );  
     }
