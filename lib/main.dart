@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,48 +14,69 @@ class MyApp extends StatelessWidget {
       title: 'FlutterApp',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.cyan),
-      home: const DashboardScreen(),
+      home: DashboardScreen(),
     );
   }
 }
 
 
+// ignore: must_be_immutable
 class DashboardScreen extends StatelessWidget {
-const DashboardScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    var time = DateTime.now();
+  var arrColors=[
+    Colors.amber,
+    Colors.grey,
+    Colors.blue,
+    Colors.pink,
+    Colors.green,
+    Colors.purpleAccent,
+    Colors.brown,
+  ];
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter'),
-      ),
-      
-      body: Center(
-        child: SizedBox(
-          height: 200,
-          width: 200,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Date is: ${time.day}',style: const TextStyle(fontSize: 20),),
-              Text('Month is: ${time.month}',style: const TextStyle(fontSize: 20),),
-              Text('Year is: ${time.year}',style: const TextStyle(fontSize: 20),),
-              Text('Time is: $time',style: const TextStyle(fontSize: 20),),
-              ElevatedButton(
-              onPressed: () {
-                // setState((){
-                  
-                // });
-              },
-          child: const Text('Press me'), // Add child widget to display text on the button
+  DashboardScreen({super.key});
+    @override
+    Widget build(BuildContext context) {
+      // ignore: unused_local_variable
+      var time = DateTime.now();
+
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text('Flutter'),
         ),
-            ],
-          ),
-        ),
-      )
-    );  
-  }
+        
+        body: GridView.count(
+          crossAxisCount: 3,
+          children:[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[0],),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[1],),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[2],),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[3],),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[4],),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[5],),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: arrColors[6],),
+            ),
+          ]
+        )
+      );  
+    }
 }
