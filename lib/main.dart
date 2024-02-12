@@ -33,22 +33,39 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: Container( 
-          child: const Column(
+        body: Container(
+          width: 300,
+          height: 300,
+          child: Stack(
             children: [
-
-              //call a class here
-              StoriesItems(),
-              Contact(),
-              SubCategoryItems(),
-              BottomMenu(),
-              
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.blueGrey,
+              ),
+          
+              Positioned(
+                left: 21,
+                top: 21,
+                // bottom:21,
+                // right: 21,
+                child: Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.grey,
+                ),
+              ),
             ],
           ),
         )
       );  
     }
 }
+
+
+
+
+
 
 class StoriesItems extends StatelessWidget{
   const StoriesItems({super.key});
