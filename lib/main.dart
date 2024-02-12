@@ -27,39 +27,12 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: 
-        // const Row(
-        //   children: [
-        //     Text('Hello ', style: TextStyle(fontSize: 18, color: Colors.grey,),),
-        //     Text('World', style: TextStyle(fontSize: 34, color: Colors.blue, fontWeight: FontWeight.bold),)
-        //   ],
-        // )
-        RichText(
-          text: const TextSpan(
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 21,
-            ),
-            children: [
-              TextSpan(text: 'Hello', ),
-              TextSpan(text: 'World ', style: TextStyle(
-                fontSize: 34,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold
-              )),
-              TextSpan(
-                text:'Welcome to ', 
-              ),
-              TextSpan(
-                text:'Flutter ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 43,
-                  color: Colors.deepOrange,
-                )
-              )
-            ]
-        ),
+        body: const Center(
+          child: Icon(
+            color: Colors.amber,
+            size:50,
+            Icons.add_a_photo_rounded
+          ),
         )
       );  
     }
