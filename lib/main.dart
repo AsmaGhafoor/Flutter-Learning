@@ -1,11 +1,4 @@
-// ignore: unused_import
-import 'dart:js_interop_unsafe';
 import 'package:flutter/material.dart';
-// ignore: unnecessary_import
-import 'package:flutter/rendering.dart';
-import 'package:flutterapp/widgets/rounded_btn.dart';
-// ignore: unused_import
-import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,44 +27,58 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 150,
-                height: 70,
-                child: RoundedButton(
-                  btnName: 'Play',
-                  icon: const Icon(Icons.play_arrow),
-                  callBack: (){
-                    // ignore: avoid_print
-                    print('Logged in');
-                  },
-                  textStyle: const TextStyle(),
-                ),
-              ),
-              const SizedBox(height: 11,),
-
-              SizedBox(
-                width: 150,
-                height: 70,
-                child: RoundedButton(
-                  btnName: 'Press',
-                  icon: const Icon(Icons.play_arrow),
-                  callBack: (){
-                    // ignore: avoid_print
-                    print('Logged in');
-                  },
-                  bgColor: Colors.orange,
-                  textStyle: const TextStyle(),
-                  iconColor: Colors.white,
-                ),
-              ),
-
-            ],
-          ),
-        )
+        body: Wrap(
+          direction: Axis.vertical,
+          spacing: 11,
+          runSpacing: 11,
+          children: [
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.red[300],
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.yellow[400],
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.black45,
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.pink[100],
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.teal,
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.deepPurple[200],
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.green[200],
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.indigo,
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.brown[400],
+            ),
+          ],
+        ),
       );  
     }
 }
