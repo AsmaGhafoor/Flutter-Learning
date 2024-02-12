@@ -27,69 +27,40 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: Wrap(
-          // direction: Axis.vertical,
-          alignment: WrapAlignment.center,
-          spacing: 11,
-          runSpacing: 11,
-          children: [
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.red[300],
+        body: 
+        // const Row(
+        //   children: [
+        //     Text('Hello ', style: TextStyle(fontSize: 18, color: Colors.grey,),),
+        //     Text('World', style: TextStyle(fontSize: 34, color: Colors.blue, fontWeight: FontWeight.bold),)
+        //   ],
+        // )
+        RichText(
+          text: const TextSpan(
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 21,
             ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.yellow[400],
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.black45,
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.pink[100],
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.teal,
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.deepPurple[200],
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.green[200],
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.indigo,
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.amber[300],
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.brown[400],
-            ),
-            Container(
-              width: 70,
-              height: 70,
-              color: Colors.orange[300],
-            ),
-          ],
+            children: [
+              TextSpan(text: 'Hello', ),
+              TextSpan(text: 'World ', style: TextStyle(
+                fontSize: 34,
+                color: Colors.blue,
+                fontWeight: FontWeight.bold
+              )),
+              TextSpan(
+                text:'Welcome to ', 
+              ),
+              TextSpan(
+                text:'Flutter ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 43,
+                  color: Colors.deepOrange,
+                )
+              )
+            ]
         ),
+        )
       );  
     }
 }
