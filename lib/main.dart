@@ -33,7 +33,7 @@ class DashboardScreen extends StatelessWidget {
           title: const Text('Flutter'),
         ),
         
-        body: Container(
+        body: SizedBox(
           width: 300,
           height: 300,
           child: Stack(
