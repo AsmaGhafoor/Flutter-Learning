@@ -28,7 +28,8 @@ class DashboardScreen extends StatelessWidget {
         ),
         
         body: Wrap(
-          direction: Axis.vertical,
+          // direction: Axis.vertical,
+          alignment: WrapAlignment.center,
           spacing: 11,
           runSpacing: 11,
           children: [
@@ -75,7 +76,17 @@ class DashboardScreen extends StatelessWidget {
             Container(
               width: 70,
               height: 70,
+              color: Colors.amber[300],
+            ),
+            Container(
+              width: 70,
+              height: 70,
               color: Colors.brown[400],
+            ),
+            Container(
+              width: 70,
+              height: 70,
+              color: Colors.orange[300],
             ),
           ],
         ),
