@@ -28,32 +28,28 @@ class MyHomePage extends StatefulWidget{
 }
 
 class MyHomeState extends State<MyHomePage> {
-  var arrIndex =[1,2,3,4,5,6,7,8,9,10];
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('This is Title'),
-        backgroundColor: Colors.teal.shade300,
+        backgroundColor: Colors.teal.shade200,
       ),
 
-      body: Center(
-        child: ClipRRect(
-          // borderRadius: BorderRadius.circular(21),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(21), 
-            bottomRight: Radius.circular(21)
-          ),
-          // borderRadius: const BorderRadius.all(Radius.elliptical(71, 11)),
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.teal.shade700,
-
-          ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              // Colors.grey,
+              // Colors.blue,
+              // Colors.yellow,
+              // Colors.teal,
+              Color(0xffffecd2),Color(0xfffcb69f)
+            ]
+          )
         ),
       )
+
     );
   }
 }
