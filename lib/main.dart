@@ -38,14 +38,12 @@ class MyHomeState extends State<MyHomePage> {
 
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
+          gradient: RadialGradient(
             colors: [
-              // Colors.grey,
-              // Colors.blue,
-              // Colors.yellow,
-              // Colors.teal,
-              Color(0xffffecd2),Color(0xfffcb69f)
-            ]
+              Color(0xffffecd2),Color(0xfffcb69f),Color(0xffff9b7e)
+            ],
+            center:Alignment.bottomCenter,
+            stops: [0.0, 0.4, 1.0]
           )
         ),
       )
