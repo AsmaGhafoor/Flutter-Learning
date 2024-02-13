@@ -39,25 +39,19 @@ class MyHomeState extends State<MyHomePage> {
       ),
 
       body: Center(
-        child: ListWheelScrollView(
-          itemExtent: 100,
-          // children: [
-            // Container(
-            //   width: 100,
-            //   color: Colors.teal.shade700,
-            // ),
-          // ],
-          children: arrIndex.map((value) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.teal.shade700,
-                  borderRadius: BorderRadius.circular(21)
-                ),
-                child: Center(child: Text('$value', style: const TextStyle(fontSize: 21),)),
-            ),
-          )).toList(),
+        child: ClipRRect(
+          // borderRadius: BorderRadius.circular(21),
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(21), 
+            bottomRight: Radius.circular(21)
+          ),
+          // borderRadius: const BorderRadius.all(Radius.elliptical(71, 11)),
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.teal.shade700,
+
+          ),
         ),
       )
     );
