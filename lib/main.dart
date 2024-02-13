@@ -28,11 +28,10 @@ class MyHomePage extends StatefulWidget{
 }
 
 class MyHomeState extends State<MyHomePage> {
-  RangeValues values = const RangeValues(0, 1);
+  var arrIndex =[1,2,3,4,5,6,7,8,9,10];
   
   @override
   Widget build(BuildContext context) {
-    RangeLabels labels=RangeLabels(values.start.toString(),values.end.toString());
     return Scaffold(
       appBar: AppBar(
         title: const Text('This is Title'),
@@ -40,19 +39,27 @@ class MyHomeState extends State<MyHomePage> {
       ),
 
       body: Center(
-        child: RangeSlider(
-          values: values,
-          labels: labels,
-          divisions: 10,
-          onChanged: (newValue){
-            values=newValue;
-            // ignore: avoid_print
-            print('${newValue.start}, ${newValue.end}');
-            setState( () {} );
-          }
+        child: ListWheelScrollView(
+          itemExtent: 100,
+          // children: [
+            // Container(
+            //   width: 100,
+            //   color: Colors.teal.shade700,
+            // ),
+          // ],
+          children: arrIndex.map((value) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.teal.shade700,
+                  borderRadius: BorderRadius.circular(21)
+                ),
+                child: Center(child: Text('$value', style: const TextStyle(fontSize: 21),)),
+            ),
+          )).toList(),
         ),
       )
-      
     );
   }
 }
