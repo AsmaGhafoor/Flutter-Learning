@@ -1,50 +1,38 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main(){
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FlutterApp',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.cyan),
-      home: const DashboardScreen(),
+      title: 'Flutter App',
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+      home: const MyHomePage(),
     );
   }
 }
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
-    @override
-    Widget build(BuildContext context) { 
-      return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('Flutter'),
-        ),
-        
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: Colors.blueGrey,
-          child: Stack(
-            children: [
-              Positioned(
-                bottom: 11,
-                right: 11,
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.greenAccent,
-                ),
-              )
-            ],
-          ),
-        )
-      );
-    }
+class MyHomePage extends StatefulWidget{
+  const MyHomePage({super.key});
+  
+  @override
+  // We can also make it in single line
+  State<StatefulWidget> createState() => MyHomeState();
+  // State<StatefulWidget> createState() {
+  //   return MyHomeState();
+  // }
+}
+
+class MyHomeState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }
