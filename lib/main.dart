@@ -23,16 +23,39 @@ class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
   
   @override
-  // We can also make it in single line
-  State<StatefulWidget> createState() => MyHomeState();
-  // State<StatefulWidget> createState() {
-  //   return MyHomeState();
-  // }
+  State<StatefulWidget> createState() {
+    return MyHomeState();
+  }
 }
 
 class MyHomeState extends State<MyHomePage> {
+  var count=0;
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('This is Title'),
+        backgroundColor: Colors.teal.shade300,
+      ),
+
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Count: $count', style: const TextStyle(fontSize: 34),),
+            ElevatedButton(onPressed: (){
+              // ignore: avoid_print
+              print(count);
+              setState(() {
+                // count++;
+                // count = count + 1;
+                count+=1; 
+              });
+            }, child: const Text('Increament Count'))
+          ],
+        ),
+      )
+    );
   }
 }
