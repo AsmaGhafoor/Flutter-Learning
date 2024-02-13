@@ -20,20 +20,31 @@ class MyApp extends StatelessWidget {
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
     @override
-    Widget build(BuildContext context) {
+    Widget build(BuildContext context) { 
       return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text('Flutter'),
         ),
         
-        body: const Center(
-          child: Icon(
-            color: Colors.amber,
-            size:50,
-            Icons.add_a_photo_rounded
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.blueGrey,
+          child: Stack(
+            children: [
+              Positioned(
+                bottom: 11,
+                right: 11,
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.greenAccent,
+                ),
+              )
+            ],
           ),
         )
-      );  
+      );
     }
 }
