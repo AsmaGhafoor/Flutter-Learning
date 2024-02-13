@@ -29,8 +29,7 @@ class MyHomePage extends StatefulWidget{
 }
 
 class MyHomeState extends State<MyHomePage> {
-  var count=0;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,23 +38,22 @@ class MyHomeState extends State<MyHomePage> {
         backgroundColor: Colors.teal.shade300,
       ),
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Count: $count', style: const TextStyle(fontSize: 34),),
-            ElevatedButton(onPressed: (){
-              // ignore: avoid_print
-              print(count);
-              setState(() {
-                // count++;
-                // count = count + 1;
-                count+=1; 
-              });
-            }, child: const Text('Increament Count'))
-          ],
+
+      body: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: 240,
+          maxHeight: 100,
         ),
-      )
+        child: const Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ves bibendum dui. Etiam semper imperdiet molestie.', 
+        style: TextStyle(
+          fontSize: 21, 
+        ),
+        maxLines: 3,
+        overflow: TextOverflow.ellipsis,
+        
+        )
+      ),
+      
     );
   }
 }
