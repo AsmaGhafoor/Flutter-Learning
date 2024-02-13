@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutterapp/intropage.dart';
-import 'package:flutterapp/splashscreen.dart';
 
 void main(){
   runApp(const MyApp());
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const SplashScreen(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -30,28 +28,30 @@ class MyHomePage extends StatefulWidget{
 }
 
 class MyHomeState extends State<MyHomePage> {
+  RangeValues values = const RangeValues(0, 1);
   
   @override
   Widget build(BuildContext context) {
+    RangeLabels labels=RangeLabels(values.start.toString(),values.end.toString());
     return Scaffold(
       appBar: AppBar(
         title: const Text('This is Title'),
         backgroundColor: Colors.teal.shade300,
       ),
 
-      body: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 240,
-          maxHeight: 100,
+      body: Center(
+        child: RangeSlider(
+          values: values,
+          labels: labels,
+          divisions: 10,
+          onChanged: (newValue){
+            values=newValue;
+            // ignore: avoid_print
+            print('${newValue.start}, ${newValue.end}');
+            setState( () {} );
+          }
         ),
-        child: const Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ves bibendum dui. Etiam semper imperdiet molestie.', 
-        style: TextStyle(
-          fontSize: 21, 
-        ),
-        maxLines: 3,
-        overflow: TextOverflow.ellipsis,
-        )
-      ),
+      )
       
     );
   }
