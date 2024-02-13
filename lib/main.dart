@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/intropage.dart';
 
 void main(){
   runApp(const MyApp());
@@ -14,14 +15,13 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const MyHomePage(),
+      home: const IntroPage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
-  
   @override
   State<StatefulWidget> createState() {
     return MyHomeState();
@@ -38,7 +38,6 @@ class MyHomeState extends State<MyHomePage> {
         backgroundColor: Colors.teal.shade300,
       ),
 
-
       body: ConstrainedBox(
         constraints: const BoxConstraints(
           maxWidth: 240,
@@ -50,7 +49,6 @@ class MyHomeState extends State<MyHomePage> {
         ),
         maxLines: 3,
         overflow: TextOverflow.ellipsis,
-        
         )
       ),
       
